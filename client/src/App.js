@@ -25,6 +25,16 @@ function App() {
     setUser(null);
   };
 
+  const handleLoginSuccess = (userData) => {
+    setUser(userData);
+    setShowLogin(false);
+  };
+
+  const handleRegisterSuccess = (userData) => {
+    setUser(userData);
+    setShowRegister(false);
+  };
+
   const articles = [
     {
       id: 1,
@@ -139,6 +149,7 @@ function App() {
               setShowLogin(false);
               setShowRegister(true);
             }}
+            onLoginSuccess={handleLoginSuccess}
           />
         )}
 
@@ -149,6 +160,7 @@ function App() {
               setShowRegister(false);
               setShowLogin(true);
             }}
+            onRegisterSuccess={handleRegisterSuccess}
           />
         )}
       </div>
