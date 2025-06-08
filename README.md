@@ -10,13 +10,8 @@
 ![Blog Post View](/client/public/images/screenshots/blog-post.png)
 *Detailed view of a blog post with comments*
 
-### Dashboard
-![Dashboard](/client/public/images/screenshots/dashboard.png)
-*User dashboard for managing posts and settings*
-
-### Editor
-![Editor](/client/public/images/screenshots/editor.png)
-*Rich text editor for creating and editing posts*
+### Footer
+![Footer](client/public/images/screenshots/footer%20page.png)
 
 ## 🌟 Overview
 
