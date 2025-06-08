@@ -27,12 +27,22 @@ const Register = ({ onClose, onSwitchToLogin, onRegisterSuccess }) => {
     }
 
     try {
-      console.log('Sending request to:', `${process.env.REACT_APP_API_URL}/api/auth/register`);
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/auth/register`, {
+      const apiUrl = `${process.env.REACT_APP_API_URL}/api/auth/register`;
+      console.log('Sending request to:', apiUrl);
+      console.log('Request payload:', {
+        username: formData.username,
+        email: formData.email,
+        password: formData.password
+      });
+
+      const response = await fetch(apiUrl, {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
         },
+        mode: 'cors',
+        credentials: 'include',
         body: JSON.stringify({
           username: formData.username,
           email: formData.email,
@@ -40,21 +50,13 @@ const Register = ({ onClose, onSwitchToLogin, onRegisterSuccess }) => {
         })
       });
 
-      console.log('Response status:', response.status);
-      const responseText = await response.text();
-      console.log('Response text:', responseText);
-
-      let data;
-      try {
-        data = JSON.parse(responseText);
-      } catch (parseError) {
-        console.error('Failed to parse response:', parseError);
-        throw new Error('Invalid response from server');
-      }
-
       if (!response.ok) {
-        throw new Error(data.message || 'Registration failed');
+        const errorData = await response.json();
+        throw new Error(errorData.message || 'Registration failed');
       }
+
+      const data = await response.json();
+      console.log('Registration successful:', data);
 
       // Store token and user data in localStorage
       localStorage.setItem('token', data.token);
@@ -67,7 +69,7 @@ const Register = ({ onClose, onSwitchToLogin, onRegisterSuccess }) => {
       onClose();
     } catch (err) {
       console.error('Registration error:', err);
-      setError(err.message);
+      setError(err.message || 'Failed to register. Please try again.');
     }
   };
 
