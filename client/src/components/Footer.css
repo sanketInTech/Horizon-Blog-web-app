@@ -1,0 +1,118 @@
+.footer {
+  border-top: 1px solid #e0e0e0;
+  margin-top: 1rem;
+  padding: 1rem 0;
+  background-color: #f8f8f8;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.horizon-logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.horizon-logo span {
+  background-color: #000;
+  color: #fff;
+  padding: 0.15rem 0.35rem;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-right: 0.15rem;
+  font-family: 'Arial Black', sans-serif;
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 0.75rem;
+}
+
+.footer-nav a {
+  color: #333;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.footer-nav a:hover {
+  text-decoration: underline;
+}
+
+.social-media {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  color: #333;
+  font-size: 0.875rem;
+}
+
+.social-media svg {
+  width: 1rem;
+  height: 1rem;
+  color: #666;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.social-media svg:hover {
+  color: #000;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.75rem;
+}
+
+.footer-links a {
+  color: #666;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.copyright {
+  font-size: 0.75rem;
+  color: #666;
+  line-height: 1.4;
+  margin-bottom: 0;
+}
+
+.copyright a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.copyright a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .footer-nav {
+    gap: 0.75rem;
+  }
+  
+  .footer-links {
+    gap: 0.5rem;
+  }
+  
+  .social-media {
+    flex-wrap: wrap;
+  }
+} 

@@ -1,0 +1,130 @@
+.article-card {
+  display: flex;
+  flex-direction: row; /* Main layout: columns side-by-side */
+  border-bottom: 1px solid #eee;
+  padding: 20px 0;
+  text-align: left;
+  max-width: 100%;
+  align-items: stretch; /* Make all direct flex children stretch to the height of the tallest item */
+  margin-bottom: 1rem;
+}
+
+.article-time-col {
+  flex-shrink: 0;
+  width: 120px; /* Fixed width for the timestamp column */
+  padding-right: 20px; /* Space between timestamp and content */
+  text-align: right; /* Align timestamp to the right within its column */
+}
+
+.article-time {
+  font-size: 14px;
+  color: #666;
+  margin-top: 5px; /* Adjust top margin to align visually with title */
+}
+
+.article-text-col {
+  flex-grow: 1; /* Allows text content to take up available space */
+  padding-right: 30px; /* Space between content and image */
+  min-width: 0; /* Prevents text from overflowing */
+}
+
+.article-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+  line-height: 1.3;
+}
+
+.article-description {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.article-image-col {
+  flex-shrink: 0;
+  width: 300px; /* Fixed width for the image column */
+  display: flex;
+  align-items: flex-start; /* Align image to the top of its column */
+  height: 100%; /* Important: This makes the image column stretch to the height of the tallest sibling */
+}
+
+.article-image-container {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.article-image {
+  width: 100%;
+  height: 100%; /* Image fills its container height */
+  object-fit: cover;
+}
+
+.article-category {
+  font-size: 14px;
+  color: #bb1919; /* BBC red-like color */
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+/* Container for the main content to provide space for timestamps */
+.main-content-container {
+  width: 90%;
+  max-width: 976px;
+  margin: 20px auto;
+  padding: 0 120px; /* Add padding to accommodate timestamps */
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .article-card {
+    flex-direction: column; /* Stack vertically on mobile */
+    align-items: flex-start;
+    padding: 15px 0;
+  }
+
+  .article-time-col {
+    width: auto;
+    padding-right: 0;
+    text-align: left;
+    order: 2; /* Put timestamp after image but before text on mobile */
+  }
+
+  .article-time {
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+
+  .article-text-col {
+    width: 100%;
+    padding-right: 0;
+    order: 3;
+  }
+
+  .article-image-col {
+    width: 100%;
+    order: 1; /* Place image first on mobile */
+    margin-bottom: 15px;
+    height: 200px; /* Fixed height for image on mobile (since dynamic height might not work as well) */
+  }
+
+  .article-image-container {
+    height: 100%;
+  }
+
+  .article-title {
+    font-size: 20px;
+  }
+
+  .article-description {
+    font-size: 15px;
+  }
+
+  .main-content-container {
+    padding: 0 20px;
+  }
+} 
