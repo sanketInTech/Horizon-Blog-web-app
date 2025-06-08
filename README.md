@@ -175,9 +175,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Contact & Social Media
 
 - GitHub: [@sanketInTech](https://github.com/sanketInTech)
-- LinkedIn: [Your LinkedIn Profile]
-- Twitter: [@YourTwitterHandle]
-- Email: [Your Email Address]
+- LinkedIn: [https://www.linkedin.com/in/sanket-desai-](https://www.linkedin.com/in/sanket-desai-/)
+- Twitter: [https://x.com/IAmSanket_21](https://x.com/IAmSanket_21)
+- Email: [sanketdesai1971@gmail.com](sanketdesai1971@gmail.com)
 
 ## 🔮 Future Enhancements
 
@@ -185,9 +185,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [ ] Social media sharing integration
 - [ ] Advanced analytics dashboard
 - [ ] Multi-language support
-- [ ] Podcast integration
 - [ ] Video content support
-- [ ] AI-powered content suggestions
 - [ ] Newsletter customization
 - [ ] Advanced search filters
 - [ ] User roles and permissions
@@ -196,15 +194,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 Please report any bugs or issues in the [Issues](https://github.com/sanketInTech/Horizon-Blog-web-app/issues) section of the repository.
 
-## 📊 Project Statistics
-
-- Lines of Code: [Add your stats]
-- Contributors: [Number of contributors]
-- Stars: [GitHub stars]
-- Forks: [GitHub forks]
-
 ---
 
 ⭐ Star this repository if you find it helpful!
 
-*Last updated: [Current Date]* 
+*Last updated: 07-06-2025* 
