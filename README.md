@@ -3,7 +3,7 @@
 ## 📸 Screenshots
 
 ### Homepage
-![Horizon Blog Homepage](/client/public/images/screenshots/homepage.png)
+![Horizon Blog Homepage](client/public/images/screenshots/Homepage.png)
 *The main landing page of Horizon Blog*
 
 ### Blog Post View
