@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Auth.css';
 
-const Register = ({ onClose, onSwitchToLogin }) => {
+const Register = ({ onClose, onSwitchToLogin, onRegisterSuccess }) => {
   const [formData, setFormData] = useState({
     username: '',
     email: '',
@@ -27,6 +27,7 @@ const Register = ({ onClose, onSwitchToLogin }) => {
     }
 
     try {
+      console.log('Sending request to:', `${process.env.REACT_APP_API_URL}/api/auth/register`);
       const response = await fetch(`${process.env.REACT_APP_API_URL}/api/auth/register`, {
         method: 'POST',
         headers: {
@@ -39,20 +40,33 @@ const Register = ({ onClose, onSwitchToLogin }) => {
         })
       });
 
-      const data = await response.json();
+      console.log('Response status:', response.status);
+      const responseText = await response.text();
+      console.log('Response text:', responseText);
+
+      let data;
+      try {
+        data = JSON.parse(responseText);
+      } catch (parseError) {
+        console.error('Failed to parse response:', parseError);
+        throw new Error('Invalid response from server');
+      }
 
       if (!response.ok) {
         throw new Error(data.message || 'Registration failed');
       }
 
-      // Store token in localStorage
+      // Store token and user data in localStorage
       localStorage.setItem('token', data.token);
       localStorage.setItem('user', JSON.stringify(data.user));
 
-      // Close modal and refresh page
+      // Call onRegisterSuccess with user data
+      onRegisterSuccess(data.user);
+
+      // Close modal
       onClose();
-      window.location.reload();
     } catch (err) {
+      console.error('Registration error:', err);
       setError(err.message);
     }
   };
