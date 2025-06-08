@@ -17,6 +17,13 @@
 
 Horizon Blog is a modern, feature-rich blogging platform built with the MERN stack (MongoDB, Express.js, React.js, Node.js). It provides a seamless experience for both bloggers and readers, with a clean and intuitive interface that makes content creation and consumption a pleasure.
 
+## 🌐 Live Demo
+
+The application is deployed and can be accessed at:
+
+- Frontend: [https://horizon-blog-web-app.netlify.app](https://horizon-blog-web-app.netlify.app)
+- Backend API: [https://horizon-blog-web-app-production.up.railway.app](https://horizon-blog-web-app-production.up.railway.app)
+
 ## ✨ Features
 
 ### For Readers
