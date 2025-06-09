@@ -27,22 +27,11 @@ const Register = ({ onClose, onSwitchToLogin, onRegisterSuccess }) => {
     }
 
     try {
-      const apiUrl = `${process.env.REACT_APP_API_URL}/api/auth/register`;
-      console.log('Sending request to:', apiUrl);
-      console.log('Request payload:', {
-        username: formData.username,
-        email: formData.email,
-        password: formData.password
-      });
-
-      const response = await fetch(apiUrl, {
+      const response = await fetch('http://localhost:5000/api/auth/register', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
+          'Content-Type': 'application/json'
         },
-        mode: 'cors',
-        credentials: 'include',
         body: JSON.stringify({
           username: formData.username,
           email: formData.email,
@@ -50,33 +39,27 @@ const Register = ({ onClose, onSwitchToLogin, onRegisterSuccess }) => {
         })
       });
 
+      const data = await response.json();
+
       if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.message || 'Registration failed');
+        throw new Error(data.message || 'Registration failed');
       }
 
-      const data = await response.json();
-      console.log('Registration successful:', data);
-
-      // Store token and user data in localStorage
+      // Store token and user data
       localStorage.setItem('token', data.token);
       localStorage.setItem('user', JSON.stringify(data.user));
-
+      
       // Call onRegisterSuccess with user data
       onRegisterSuccess(data.user);
-
-      // Close modal
-      onClose();
     } catch (err) {
-      console.error('Registration error:', err);
-      setError(err.message || 'Failed to register. Please try again.');
+      setError(err.message);
     }
   };
 
   return (
     <div className="auth-modal">
       <div className="auth-content">
-        <h2>Register</h2>
+        <h2>Create Account</h2>
         {error && <div className="error-message">{error}</div>}
         <form onSubmit={handleSubmit}>
           <div className="form-group">

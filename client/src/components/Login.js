@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Auth.css';
 
-const Login = ({ onClose, onSwitchToRegister }) => {
+const Login = ({ onClose, onSwitchToRegister, onLoginSuccess }) => {
   const [formData, setFormData] = useState({
     email: '',
     password: ''
@@ -20,7 +20,7 @@ const Login = ({ onClose, onSwitchToRegister }) => {
     setError('');
 
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/auth/login`, {
+      const response = await fetch('http://localhost:5000/api/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -34,13 +34,12 @@ const Login = ({ onClose, onSwitchToRegister }) => {
         throw new Error(data.message || 'Login failed');
       }
 
-      // Store token in localStorage
+      // Store token and user data
       localStorage.setItem('token', data.token);
       localStorage.setItem('user', JSON.stringify(data.user));
-
-      // Close modal and refresh page
-      onClose();
-      window.location.reload();
+      
+      // Call onLoginSuccess with user data
+      onLoginSuccess(data.user);
     } catch (err) {
       setError(err.message);
     }

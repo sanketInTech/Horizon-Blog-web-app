@@ -15,15 +15,15 @@
   background-color: white;
   padding: 2rem;
   border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 400px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .auth-content h2 {
   margin-bottom: 1.5rem;
-  color: #333;
   text-align: center;
+  color: #333;
 }
 
 .form-group {
@@ -33,8 +33,7 @@
 .form-group label {
   display: block;
   margin-bottom: 0.5rem;
-  color: #333;
-  font-weight: 500;
+  color: #555;
 }
 
 .form-group input {
@@ -47,14 +46,14 @@
 
 .form-group input:focus {
   outline: none;
-  border-color: #007bff;
-  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+  border-color: #070809;
+  box-shadow: 0 0 0 2px rgba(34, 34, 34, 0.25);
 }
 
 .auth-button {
   width: 100%;
   padding: 0.75rem;
-  background-color: black;
+  background-color: #0c0c0c;
   color: white;
   border: none;
   border-radius: 4px;
@@ -64,15 +63,12 @@
 }
 
 .auth-button:hover {
-  background-color: #333;
+  background-color: #0c0c0c;
 }
 
 .error-message {
   color: #dc3545;
   margin-bottom: 1rem;
-  padding: 0.5rem;
-  background-color: #f8d7da;
-  border-radius: 4px;
   text-align: center;
 }
 
@@ -85,7 +81,7 @@
 .switch-button {
   background: none;
   border: none;
-  color: #000;
+  color: #080909;
   cursor: pointer;
   font-size: 1rem;
   padding: 0;
@@ -94,5 +90,4 @@
 
 .switch-button:hover {
   text-decoration: underline;
-  color: #555;
 } 

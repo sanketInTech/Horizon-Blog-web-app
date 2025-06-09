@@ -9,13 +9,13 @@ function Footer() {
       <div className="footer-container">
         {/* Logo */}
         <div className="horizon-logo">
-          <span>H</span>
-          <span>O</span>
-          <span>R</span>
           <span>I</span>
-          <span>Z</span>
-          <span>O</span>
           <span>N</span>
+          <span>S</span>
+          <span>P</span>
+          <span>I</span>
+          <span>R</span>
+          <span>E</span>
         </div>
 
         {/* Navigation Links */}
@@ -32,7 +32,7 @@ function Footer() {
 
         {/* Social Media Icons */}
         <div className="social-media">
-          <span>Follow Horizon on:</span>
+          <span>Follow Inspire on:</span>
           <FaXTwitter />
           <FaFacebookF />
           <FaInstagram />
@@ -44,11 +44,11 @@ function Footer() {
         {/* Footer Links */}
         <div className="footer-links">
           <Link to="/terms">Terms of Use</Link>
-          <Link to="/about">About Horizon</Link>
+          <Link to="/about">About Inspire</Link>
           <Link to="/privacy">Privacy Policy</Link>
           <Link to="/cookies">Cookies</Link>
           <Link to="/accessibility">Accessibility Help</Link>
-          <Link to="/contact">Contact Horizon</Link>
+          <Link to="/contact">Contact Inspire</Link>
           <Link to="/advertise">Advertise with us</Link>
           <Link to="/do-not-sell">Do not share or sell my info</Link>
           <Link to="/support">Contact technical support</Link>
@@ -56,7 +56,7 @@ function Footer() {
 
         {/* Copyright */}
         <p className="copyright">
-          © 2025 Horizon. All rights reserved. The <span className="italic">Horizon is not responsible for the content of external sites.</span>{" "}
+          © 2025 Inspire. All rights reserved. The <span className="italic">Inspire is not responsible for the content of external sites.</span>{" "}
           <Link to="/external-linking-policy">Read about our approach to external linking.</Link>
         </p>
       </div>
